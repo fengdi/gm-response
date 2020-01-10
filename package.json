@@ -1,6 +1,6 @@
 {
   "name": "gm-response",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "faas easy response",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,10 @@
     "easy",
     "response"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/ddm/gm-response.git"
+  },
   "author": "gm-tangoboy",
   "license": "ISC"
 }
