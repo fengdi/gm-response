@@ -3,35 +3,40 @@
 #### 介绍
 gm-response
 
-#### 软件架构
-软件架构说明
-
 
 #### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
+`npm i gm-response`
 
 #### 使用说明
+云函数返回时调用此方法
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```javascript
+const Response = require('gm-response');
+const code = require('./code');
 
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+Response.init(code);//引入错误码消息模板
 
 
-#### 码云特技
+exports.foo = function(){
+	//your code...
+	return Response(data, 0, '消息内容');//返回调用此方法
+}
+```
+Response支持三个参数，只分类型不分顺序，都为可选。
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+|  类型 | 说明  | 字段 |
+| ------------ | ------------ | ------------ |
+|  对象 | 数据  | data |
+| 字符串  | 消息   | message |
+|  数字 |  错误码 | error 和 success |
+
+注：（error为 **0** 时，success即为 **true** ）
+
+
+
+
+
+
+
+
+
